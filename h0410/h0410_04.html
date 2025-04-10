@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+    <style>
+        *{padding:0px; margin:0px;}
+        table{border-top:1px solid black; margin:30px auto;
+              border-collapse: collapse; text-align:center;}
+        th, td{height:40px; border-bottom:1px solid #ddd;}
+        th{background-color:#f7f7f7; color:#000; font-size:18px;}
+        td{color:#666; font-size:16px;}
+        .t{border-right:1px solid #ddd;}
+        .b{color:#00478B; font-weight:700;}
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="190px">
+            <col width="190px">
+            <col width="410px">
+        </colgroup>
+        <tr>
+            <th class="t">구분</th>
+            <th class="t">등급</th>
+            <th>종합등급</th>
+        </tr>
+        <tr>
+            <td class="t">환경</td>
+            <td class="t">A</td>
+            <td class="b">B+</td>
+        </tr>
+        <tr>
+            <td class="t">사회</td>
+            <td class="t">A+</td>
+            <td class="b">B+</td>
+        </tr>
+        <tr>
+            <td class="t">지배구조</td>
+            <td class="t">B</td>
+            <td class="b">B+</td>
+        </tr>
+    </table>
+</body>
+</html>
