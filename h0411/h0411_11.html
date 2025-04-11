@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btn(){
+            var chkId = document.getElementById("id").value.length
+            if (chkId<6){
+                alert("아이디는 5자 이상 입력해야 합니다.");
+                document.getElementById("id").value="";
+                document.getElementById("id").focus();
+                return;
+            }
+            memberFrm.submit();
+        }
+    </script>
+</head>
+<body>
+    <form action="send.html" name="memberFrm" method="post">
+        <label>아이디</label>
+        <input type="text" name="id" id="id"><br>
+        <label>비밀번호</label>
+        <input type="password" name="pw" id="pw"><br>
+        <input type="button" value="로그인" onclick="btn()">
+    </form>
+</body>
+</html>

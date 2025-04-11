@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usemap</title>
+    <style>
+        *{padding:0; margin:0;}
+    </style>
+</head>
+<body>
+    <!-- usemap : rect 사각형, circle 원, poly 다각형, default -->
+    <!-- circe 좌표, 반지름 -->
+    <map name="ebs">
+        <area shape="poly" coords="97,322,72,352,98,383,236,383,236,322" href="https://www.ebssw.kr/coding/dcpView.do" target="_blank">
+        <area shape="circle" coords="360,520,80" href="https://www.ebssw.kr/coding/blkCodingRunView.do" 
+        target="_blank" alt="달려라 펭수 연결">
+        <area shape="rect" coords="20,748,682,893" href="https://www.ebs.co.kr/main"
+        target="_blank">
+        <area shape="rect" coords="21,917,680,1063" href="https://www.ebssw.kr/coding/smpView.do"
+        target="_blank">
+    </map>
+    <img src="images/event1.jpg" usemap="#ebs">
+</body>
+</html>
