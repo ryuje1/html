@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{text-shadow:5px 5px 3px #f00;   /* 그림자효과 -> text-shadow:가로거리 세로거리 번짐정도 색상 */
+           font-size:50px; letter-spacing: -2px; word-spacing: 20px;}   /* letter-spacing : 글자 사이 간격 / word-spacing : 단어 사이 간격 */
+        h3{text-shadow:7px -7px 5px rgba(0,0,0,0.8); font-size:50px;}   /* rgba(r,g,b,투명도) */
+        div{width:200px; height:20px; border:1px solid black;
+            white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:pointer;}
+            /* wrap : 범위를 벗어나지 못하고 아래로 떨어짐 / nowrap : 범위를 제한해도 옆으로 출력 */
+            /* overflow:hidden -> 범위를 벗어난 부분은 잘라냄 / overflow:visible -> 보여줌 */
+            /* text-overflow:ellipsis -> 범위를 벗어난 텍스트는 말줄임표(…)로 출력 */
+            /* text-indent : 들여쓰기 (px 또는 %) */
+        div:hover{overflow:visible; white-space:wrap; height:250px;}
+    </style>
+</head>
+<body>
+    <h2>회원가입 진행상황</h2>
+    <h3>회원가입</h3>
+
+    <div>
+        "과학기술 발전에 써달라" 독지가 기부 잇따라 기부문화 생활화 "월정 정기 기부가 90%"
+        하루 평균 기부금 1.9억원, 한국과학기술원(KAIST)이 지난 4년간 받은 기부금 성적표입니다.
+        이광형 총장은 지난 2021년 3월 취임 당시 "하루 1억 원씩, 취임 기간 1460억 원의 기부금을 유치하겠다"고 말했습니다.
+        지난달 말 기준 누적 발전기금이 2805억 원을 돌파하면서 당시 약속했던 목표보다 2배 가까이 초과 달성했습니다.
+        이 같은 KAIST의 기부 성과는 지난해 10월 열린 국회 과학기술정보방송통신위원회의 국정감사에서 주목받기도 했습니다.
+        더불어민주당 정동영 의원은 당시 이 총장에게 "KAIST가 하루에 1.9억원을 모금해 2500억 원 넘게 모았는데 비결이 뭐냐"고 질의했습니다.
+        피감기관에 대한 호통과 질책 대신 '칭찬'을 늘어놓는 국감은 이례적이라 딱딱했던 국감장 분위기가 순식간에 화기애애해졌습니다.
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+a{text-decoration:none; color:inherit;}
+h1{text-align:center; color:#03c75a; height:78px; padding:62px; font-size:70px; font-weight:900;}
+section{width:460px; margin:0 auto;}
+/* form부분 */
+#id, #pw{width:460px; height:51px; box-sizing:border-box; padding:10px 35px 10px 15px; font-size:15px; border:1px solid #dadada;}
+#id{margin-bottom:14px;}
+#pw{margin-bottom:30px;}
+/* 버튼부분 */
+#loginBtn{width:460px; height:61px; background:#03c75a; border:none; font-size:20px; font-weight:700; color:white; cursor:pointer;}      /* cursor:pointer -> 마우스 올리면 커서 모양 손가락모양으로 변경*/

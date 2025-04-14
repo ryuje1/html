@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 태그 선택자 */
+        h2{color:green;}
+        li{font-size:20px;}
+        /* 클래스 선택자 - 지정하는 형태를 여러부분 사용 가능 */
+        .color{color:red; font-size:25px;}
+        /* id 선택자 - 지정하는 형태를 1군데에만 사용 (원칙은 1군데만 가능한데 여러 부분 적용은 가능) */
+        /* id > 클래스 > 태그 순서. 같이 사용시 id 적용됨 */
+        #id01{color:blue; font-size:14px;}
+        span{color:red; font-weight:700;}
+        .s02{color:blueviolet; font-weight:700;}
+    </style>
+</head>
+<body>
+    <h2>선택자 종류</h2>
+    <ul>
+        <li>태그 선택자</li>
+        <li class="color">class 선택자</li>
+        <li id="id01">id 선택자</li>
+    </ul>
+    <div class="color">글자색상확인</div>
+
+    <p>
+        미지의 목적지로 향하는 한 유럽 항공사의 일명 <span class="s02">'미스터리 항공권'</span>이 화제가 되고 있습니다.
+        승객은 물론 객실 승무원들도 출국 전까지 도착지를 전혀 알 수 없는 항공편이 있습니다.
+        스칸디나비아 항공이 출시한 <span>'미스터리 항공권'</span>입니다.
+        덴마크 코펜하겐 공항에서 출발해, 비자 없이도 입국할 수 있는 유럽의 솅겐 지역 내 한 도시에 도착하는 이 항공권은 4월 4일~7일까지 일정으로 한정 판매됐는데요.
+        도착지를 알 수 없음에도 판매 시작 4분 만에 완판을 기록하며 비상한 인기를 끌었습니다.
+    </p>
+</body>
+</html>

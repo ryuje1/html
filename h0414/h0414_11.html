@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{width:700px; height:500px; border:30px dotted skyblue;
+            font-size:30px;
+            background-color:pink;
+            background-size:100%;
+            background-repeat:no-repeat;
+            /* border-box : 선 바깥부분 기준 / padding-box : 선 안쪽부분 기준 / content-box : padding 안쪽부분 기준 */
+            background-clip:border-box;
+            padding:30px;
+            box-sizing:border-box;}
+        #container{width:100%; height:900px;
+                   background-image:url(images/back1.jpg);
+                   background-size:100px;       /* contain : 긴 부분을 기준으로 확대/축소 -> 여백O / cover : 짧은 부분을 기준으로 확대/축소 -> 여백X */
+                   background-repeat:repeat;    /* 반복해서 채움 (no-repeat, repeat, repeat-x, repeat-y) */
+                   background-clip:content-box;}
+    </style>
+</head>
+<body>
+   <div>
+    이중근 부영그룹 회장이 학교 기숙사 리모델링 기금으로 200억 원 상당을 기부했고, 김동명(90) 법무사가 인공지능(AI) 연구에 써달라며 부동산과 현금 등 20억 원을 학교에 전달했습니다.
+    최근 익명의 기부자가 기부처를 두고 고심하던 끝에 KAIST의 비전에 공감한다며 20억 원의 기부를 결정했으며, 소아마비로 지체장애가 있는 다른 익명의 기부자는 의사과학자를 키워 바이오 강국을 만들어 달라며 자신의 부동산과 예금 등 전 재산을 유증했습니다.
+    이처럼 학교와 직접적인 연고가 없는 독지가들은 'KAIST가 잘 돼야 대한민국이 발전한다'는 신념으로 기부에 동참했습니다.
+    동문 기부도 활발히 이어지고 있습니다.
+    게임사 크래프톤의 장병규 의장 등 전산학부 출신 200여 명의 동문이 학부 증축기금 캠페인을 통해 116억 원을 모금했으며, 우리별 위성 연구팀, 건설·환경공학과 동문, LG디스플레이 임원급 동문 모임 등 다양한 그룹이 기부 행렬에 동참했습니다.
+    정기적인 기부를 시행하는 소액 기부금도 꾸준한 성장세를 보이고 있습니다.
+   </div>
+   <div id="container">
+
+   </div>
+</body>
+</html>
