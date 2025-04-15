@@ -1,0 +1,23 @@
+*{padding:0; margin:0;}
+a{text-decoration:none; color:inherit;}
+ul, ol{list-style:none;}
+section{width:100%; height:566px;}
+.tour{width:1200px; height:566px; border:1px solid black;
+        margin:0 auto;
+        background:url('../images/097.jpg') no-repeat;  /* .. : 폴더를 나와서 위치를 찾으라는 의미 */
+        display:flex; align-items:center; box-sizing:border-box;}
+.prod{width:300px; height:430px; padding-left:50px; box-sizing:border-box;}
+.prod strong{font-size:36px; color:#fff; font-weight:600;
+             margin-bottom:35px; display:block;}
+.photo-tab .t{font-size:15px; height:36px; border-radius:18px; 
+              line-height:35px; letter-spacing:-0.4px; margin-bottom:13px;
+              padding-left:20px; background:#fff; color:#252525;}
+.photo-tab .t1{width:185px; background:#252525; color:#fff; line-height:35px;}
+.t2{width:198px;}
+.t3{width:218px;}
+.t4{width:178px;}
+.type{width:900px; height:430px;}
+.type ul{display:flex; width:900px; height:430px; 
+         justify-content:space-between; align-items:flex-end;}
+.type li{width:258px; height:400px; background:white;
+         border:1px solid rgb(234,234,234); box-shadow:0 1px 10px 0 rgba(0,0,0,0.06);}

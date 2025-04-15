@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        #d01{/* border:5px solid black;*/
+            border-width:5px 10px 20px 30px;  /* (상, 우, 하, 좌) */
+            border-style:solid; border-color: black;}
+        #d02{border-width:5px 10px 20px;      /* (상, 좌우, 하) */
+            border-style:solid; border-color: black;}
+        #d03{border-width:5px 20px;           /* (상하, 좌우) */
+            border-style:solid; border-color: black;
+            border-radius:20px;}
+    </style>
+</head>
+<body>
+    <div id="d01">1</div>
+    <hr>
+    <div id="d02">2</div>
+    <hr>
+    <div id="d03">3</div>
+    <hr>
+    <div id="d04">4</div>
+</body>
+</html>

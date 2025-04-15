@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        a{border:2px dashed black; width:100px; height:40px; display:inline-block;
+            text-align:center; line-height:40px; 
+            text-decoration:none; color:inherit;}
+        /* 블럭요소 - 하단으로 나타남. width, height 지정 가능 */
+        /* display:inline 하면 인라인으로 바뀌고 지정한 width, height 사라짐 */
+        div{border:2px dotted black;
+            width:200px; height:100px;
+            display:inline-block;}
+        /* 인라인요소 - 옆으로 나타남. width, height 지정 불가 */
+        /* display:block 하면 하단으로 내려옴 */
+        span{border:2px solid black; width:200px; height:100px; display:inline-block;}
+        /* display:inline-block 인라인 배치 내용은 블록. width, height 지정 가능 */
+        #d01{visibility: hidden;}
+        #d02{display:none;}
+        /* visibility: hidden; => 내용만 사라짐, 공간은 존재 / display:none; => 내용, 공간 둘 다 사라짐 */
+    </style>
+</head>
+<body>
+    <div id="d01">1</div>
+    <div id="d02">2</div>
+    <div>3</div>
+    <hr>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <hr>
+    <a href="#">회원가입</a>
+</body>
+</html>
