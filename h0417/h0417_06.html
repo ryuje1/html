@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h4{text-align:center;}
+        .shape{width:100px; height:100px; margin:50px auto;
+               background:blue;
+               animation-name:change;
+               animation-duration:1s;
+               animation-direction:alternate;
+               animation-iteration-count:infinite;}
+        @keyframes change{
+            from{background: blue; border:3px dotted black;}
+            to{background: aqua; border:3px dotted red; border-radius:50%;}
+        }
+
+        .shape2{width:100px; height:100px; margin:50px auto;
+               background:blue;
+               animation:change2 1s alternate infinite;}
+               /* animation-name:change2;
+               animation-duration:1s;
+               animation-direction:alternate;
+               animation-iteration-count:infinite; */
+        @keyframes change2{
+            from{background: blue; border:3px dotted black; transform:rotate(0deg);}
+            to{background: aqua; border:3px dotted red; border-radius:50%; transform:translate(100px,0);}
+        }
+
+        @keyframes change3{
+            from{transform:rotate(0deg);}
+            to{transform:rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <h4>애니메이션</h4>
+    <div class="shape"></div>
+    <h4>애니메이션2</h4>
+    <div class="shape2"></div>
+</body>
+</html>
