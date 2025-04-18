@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{border:1px solid black; box-sizing:border-box;}
+        .top{width:100%; height:200px; background:url('images/park01.jpg') no-repeat; background-size:cover;
+            color:white; text-align:center; line-height:200px; font-weight:700; font-size:35px;}
+        section{display:flex;}
+        .sect-left{width:80%; height:500px; background:rgb(248, 248, 135);}
+        .sect-left img{width:100%;}
+        .sect-right{width:20%; height:500px; background:rgb(76, 190, 76);}
+        .footer{width:100%; height:100px; background:rgb(252, 95, 95);}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="top">상단 TOP 부분</div>
+        <section>
+            <div class="sect-left">
+                <img src="images/nct.jpg">
+            </div>
+            <div class="sect-right">오른쪽 부분</div>
+        </section>
+        <div class="footer">하단 FOOTER 부분</div>
+    </div>
+</body>
+</html>
