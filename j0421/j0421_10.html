@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        h2{text-align:center;}
+        table{margin:0 auto; text-align:center;}
+        table, th, td{border:1px solid black; border-collapse:collapse;}
+        th, td{width:150px; height:40px;}
+        th:nth-child(2){width:300px;}
+    </style>
+</head>
+<body>
+    <h2>산술연산</h2>
+    <script>
+
+        /*
+        let a = "a";
+        let b = "b";
+        result = a+b;
+        document.write(result, "<br>");
+        document.write(a-b, "<br>");
+        document.write(a*b, "<br>");
+        document.write(a/b, "<br>");
+        */
+
+        /*
+        let a = 10;         // typeof(a) -> number
+        let b = "10";       // typeof(b) -> string
+        result = a==b;      // 자바스크립트 : 안에 있는 데이터를 가지고 비교해서 true 출력
+        document.write(result, "<br>");
+
+        result2 = a===b;    // 데이터 값과 타입까지 비교는 ===, 데이터 값만 비교는 ==
+        document.write(result2, "<br>");
+        */
+
+        /* let num1 = 15;
+        let num2 = 2;
+        let result = 0;
+        result = num1 + num2;
+        document.write("더하기 : ", result, "<br>");
+        result = num1 - num2
+        document.write("빼기 : ", result, "<br>");
+        result = num1 * num2
+        document.write("곱하기 : ", result, "<br>");
+        result = num1 / num2
+        document.write("나누기 : ", result, "<br>"); */
+
+
+
+        /*
+        var hdata = "";
+        hdata += "<tr>";
+        hdata += "<td>1</td>";
+        hdata += "<td>홈페이지를 오픈했습니다.</td>";
+        hdata += "<td>관리자</td>";
+        hdata += "<td>2025-04-21</td>";
+        hdata += "</tr>";
+        */
+
+        function dataBtn(){
+            var hdata = "";
+            for(let i=0; i<100; i++){
+                hdata += "<tr>";
+                hdata += `<td>${i+1}</td>`;     // 빽키(`) 사용 - 변수 사용가능 ${}
+                hdata += "<td>홈페이지를 오픈했습니다.</td>";
+                hdata += "<td>관리자</td>";
+                hdata += "<td>2025-04-21</td>";
+                hdata += "</tr>";
+            }
+            // html 넣어야 하는데 innerText는 html을 text로 인식해서 입력됨
+            // document.querySelector("#tbody").innerText=hdata;
+            document.querySelector("#tbody").innerHTML=hdata;
+        }
+
+    </script>
+
+    <h2>테이블</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"> <!-- document.querySelector("#tbody").innerText() -->
+            <tr>
+                <td>1</td>
+                <td>홈페이지를 오픈했습니다.</td>
+                <td>관리자</td>
+                <td>2025-04-21</td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="dataBtn()">데이터 불러오기</button>
+</body>
+</html>

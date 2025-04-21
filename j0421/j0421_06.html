@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{width:200px; height:50px; border:1px solid black;
+            text-align:center; line-height:49px;}
+    </style>
+</head>
+<body>
+    <h2 id="bmi">BMI 계산하기</h2>
+    <label>신장</label>
+    <input type="text" name="cm" id="cm">
+    <label>cm</label>
+    <br>
+    <label>체중</label>
+    <input type="text" name="kg" id="kg">
+    <label>kg</label>
+    <br>
+    <button onclick="calBtn()">계산하기</button>
+    <div id="result">0</div>
+    <div id="result2">정상</div>
+
+    <script>
+        function calBtn(){
+            alert("계산하기 실행");
+            let cm = document.querySelector("#cm").value;
+            let m = (document.querySelector("#cm").value)/100;
+            let kg = (document.querySelector("#kg").value);
+            let result = kg/(m*m)
+            document.querySelector("#result").innerText=result
+
+            console.log("키 : "+cm);
+            console.log("체중 : "+kg);
+            console.log("결과값 : "+result);
+            console.log(document.querySelector("#bmi").innerText="결과");
+
+            /* 중요~~~
+            위치점 가져오려면 document.querySelector(#아이디명 또는 .클래스명)
+            글자 가져오려면 innerText. 글자 변경하려면 innerText=~ 
+            input값 가져오려면 value. 값을 변경하려면 value=~
+            */
+
+
+            if(result >= 30){
+                console.log(document.querySelector("#result2").innerText="고도비만");
+            }else if(result >= 25){
+                console.log(document.querySelector("#result2").innerText="비만");
+            }else if(result >= 23){
+                console.log(document.querySelector("#result2").innerText="과체중");
+            }else if(result >= 18.5){
+                console.log(document.querySelector("#result2").innerText="정상");
+            }else{
+                console.log(document.querySelector("#result2").innerText="저체중");
+            }
+        }
+    </script>
+
+    <script>
+       /* 체중, 키(cm) 입력받아, 체중(kg) ÷ {신장(m) × 신장(m)} 계산하여 결과값 출력하시오. 
+          입력 2개 - 체중, 키 
+          키를 cm -> m로 변경
+          계산수식을 이용해서 결과값을 출력하시오. 
+       let cm = Number(prompt("키(cm)를 입력하세요. "));
+       let kg = Number(prompt("체중을 입력하세요. "));
+       let m = cm / 100;
+       console.log("키(cm) : ", cm);
+       console.log("체중 : ", kg);
+       console.log("BMI 지수 : ", kg/(m*m)); 
+       */
+
+       /*
+        // 국어, 영어, 수학 점수를 입력받아 값을 출력하시오.
+       let kor = Number(prompt("국어점수를 입력하세요.  "));    // 입력받을때 타입변경 가능
+       let eng = Number(prompt("영어점수를 입력하세요.  "));
+       let math = Number(prompt("수학점수를 입력하세요.  "));
+       // 콘솔창에 출력
+       // 합계, 평균 출력하시오.
+       console.log("국어점수 : ", Number(kor));
+       console.log("영어점수 : ", Number(eng));
+       console.log("수학점수 : ", Number(math));
+       let total = Number(kor)+Number(eng)+Number(math);
+       let avg = total / 3;
+       console.log("합계 : ", total);
+       console.log("평균 : ", avg);
+       */
+    </script>
+</body>
+</html>

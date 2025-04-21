@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 타입변경방법 **중요
+        Boolean()       // boolean타입으로 변경
+        Number()        // number타입으로 변경
+        String()        // string()타입으로 변경
+        parseFloat();   // 실수형 타입으로 변경
+        parseInt();     // 정수형 타입으로 변경
+
+        let a = 10;
+        let b = String(a);
+        console.log(typeof(b));
+
+        let c = 10.5;   // number:float
+        let d = parseInt(c); // number:int
+        let f = Number(c);  // number:float
+        console.log(typeof(d), d);  // 10 출력 - 소수점 없애고 정수형으로 변경
+        console.log(typeof(f), f);  // 10.5 출력 - 소수점 그대로
+
+        /*
+        let a = true;       // boolean
+        let b = false;      // boolean
+        let c = 10 > 5;     // true - boolean
+        let c2 = 5 < 10;    // false - boolean
+        let d = Boolean(null);
+        let e = "true";     // string
+        let f = Boolean(e); // 문자열타입 -> 논리형타입으로 타입 변경
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(typeof(e));     // 타입확인 : string
+        console.log(typeof(f));     // 타입확인 : boolean
+        
+        let g = "10";
+        let h = "20";
+        console.log(g+h);           // 1020 출력
+        console.log(Number(g)+Number(h)); // 30 출력
+        */
+
+
+        /*
+        let box; // defind
+        box = 100;
+        box = 30;
+        document.write(box);    // 30 출력
+        */
+
+        /*
+        let age = prompt("당신의 나이를 입력하세요. ", 0);
+        if(age >= 20){
+            document.write("당신은 성인입니다. 나이 : ", age);
+        } else{
+            document.write("당신은 미성년자입니다. 나이 : ", age);
+        }
+        */
+    </script>
+</body>
+</html>

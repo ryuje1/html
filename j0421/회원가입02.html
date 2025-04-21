@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="js/member.js"></script>
 </head>
 <body>
     <header>
@@ -93,7 +95,7 @@
                     <tr>
                         <th><span></span>비밀번호</th>
                         <td>
-                            <input type="password" name="pw"><br>
+                            <input type="password" name="pw" id="pw"><br>
                             <span>영문, 숫자, 특수문자 중 2종류 조합 시 10자리 이상 입력</span><br>
                             <span>영문, 숫자, 특수문자 모두 조합 시 8자리 이상 입력</span>
                         </td>
@@ -101,8 +103,8 @@
                     <tr>
                         <th><span></span>비밀번호 확인</th>
                         <td>
-                            <input type="password" name="pw2">
-                            <span>비밀번호를 다시 한번 입력해 주세요.</span>
+                            <input type="password" name="pw2" id="pw2" onkeyup="pwConfirm()">
+                            <span id="pwCheck">비밀번호를 다시 한번 입력해 주세요.</span>
                         </td>
                     </tr>
                     <tr class="form-email">
@@ -110,8 +112,9 @@
                         <td>
                             <input type="text" name="email1">
                             <span>@</span>
-                            <input type="text" name="email2">
-                            <select name="email-sel">
+                            <input type="text" name="email2" id="email2">
+                            <select name="email-sel" onchange="emailchange()" id="email-sel">
+                                <option value="">직접입력</option>
                                 <option value="naver.com">네이버</option>
                                 <option value="daum.net">다음</option>
                                 <option value="gmail.com">구글</option>
@@ -121,12 +124,12 @@
                     <tr class="form-address">
                         <th><span></span>주소</th>
                         <td>
-                            <input type="text" name="postZip">
-                            <button type="button" onclick="adbtn()">우편번호</button>
+                            <input type="text" name="postZip" id="postZip">
+                            <button type="button" onclick="zipCodeBtn()">우편번호</button>
                             <br>
-                            <input type="text" name="addr1">
+                            <input type="text" name="addr1" id="addr1">
                             <br>
-                            <input type="text" name="addr2">
+                            <input type="text" name="addr2" id="addr2">
                         </td>
                     </tr>
                     <tr class="form-phone">
