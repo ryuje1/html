@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        let i=10;
+        
+        /*
+        do{
+            i = prompt("프로그램을 종료 (1. 예, 0. 아니요) :  ")
+            alert(i);
+        }while(i==0)     // 조건이 맞지 않아도 1번은 실행됨
+        */
+
+        /*
+        while(i==0){
+            i = prompt("프로그램을 종료 (0. 실행, 1. 취소) :  ")
+        }               // 조건이 맞지 않으면 실행되지 않음
+        
+        document.write("the end");
+        */
+
+
+        /*
+        for(let i=1; i<=100; i++){
+            if(i%2==0 && i%5==0)
+                document.write(i, "<br>");
+        }
+        */
+
+        /*
+        let i = 1;
+        while(i<=100){
+            // 짝수만 출력하시오.
+            if(i%2==0 && i%5==0)  // 2의 배수이면서 5의 배수만 출력하시오.
+                document.write(i+"<br>");
+            i++;
+        }
+        */
+    </script>
+    <style>
+        h2{text-align:center;}
+        table, th, td{border:1px solid black; border-collapse:collapse; text-align:center;}
+        table{margin:0 auto;}
+        th{background:#eee;}
+        th, td{width:200px; height:40px;}
+    </style>
+</head>
+<body>
+    <h2>게시판</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+
+        <script>
+            let data ="";
+
+            for(let i=0; i<100; i++){
+                data += `<tr><td>${i+1}</td><td>이벤트 신청</td><td>관리자</td><td>2025-04-22</td></tr>`;
+            }
+
+            document.querySelector("#tbody").innerHTML=data;
+        </script>
+
+    </table>
+</body>
+</html>
