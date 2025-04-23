@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // 객체선언 - 배열 : 리스트
+        let arr = new Array();
+        let arr2 = new Array(1,2,"안녕");
+        let arr1 = [1, 2, "안녕", true];
+        let arr4 = [];
+        */
+
+        /* 배열 추가 */
+        /*
+        let arr = [1,2,3];
+        document.write(arr.length, "<br>");     // 배열 길이
+        arr.push(4)                             // 배열 추가 - 제일 뒤에 추가   **자주 사용
+        arr.unshift(10);                        // 배열 추가 - 제일 앞에 추가
+        arr.splice(2,0,20);                     // 배열 추가/삭제 - 원하는 위치에 추가/삭제
+        document.write(arr, "<br>");
+        */
+
+
+        /* 배열 삭제 */
+        /*
+        let arr = [1, 2, 3, 4, 5];
+        arr.pop();                              // 배열 삭제 - 제일 뒤에 삭제   **자주 사용
+        arr.shift();                            // 배열 삭제 - 제일 앞에 삭제
+        arr.splice(1,2);                        // 배열 삭제 - 원하는 위치 삭제 (1번 index부터 2개 삭제)
+        document.write(arr, "<br>");
+        */
+
+        let strArr = ['안녕', '반가워', '잘가', '다음에 봐', '잘있어', '어디가니'];
+        let arr = [10, 8, 2, 3, 1, 5, 20, 50, 15, 7];
+        document.write(arr, "<br>");
+
+        // arr.sort((a, b)=>a-b);      // 모든 숫자를 비교해서 순차정렬
+        // document.write(arr[arr.length-1], "<br>");      // 제일 마지막 항목 가져옴. 순차정렬 후 가장 마지막 => 가장 큰 수
+        // arr.sort((a, b)=>b-a);      // 모든 숫자를 비교해서 역순정렬
+        // arr.reverse();              // 순서를 거꾸로 반환 (값 역순X)
+        // strArr.sort();
+        let txt = arr.join("-");        // 배열을 연결문자를 기준으로 문자열로 반환
+        document.write(arr, "<br>");
+        document.write(txt, "<br>");
+        document.write(typeof(txt), "<br>");
+        document.write(strArr, "<br>");
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 최신버전 다운로드 -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>제이쿼리</title>
+    <script>
+        // 제이쿼리 선언문
+        $(document).ready(function(){
+        });
+        
+        /*
+        // 제이쿼리 약식선언문
+        $(function(){
+            // document.querySelector("#d01").innerText = 500;
+
+            // input : value -> val() input 값을 가져옴
+            // input제외 : innerText -> text() 안에 글자 입력
+            $("#d01").text(500);
+        });
+        */
+        
+        // 제이쿼리 선언문
+        $(function(){
+            // 클릭명령어 선언 - click, dblclick, change, scroll, focusin, focusout
+            $("#cbtn").click(function(){
+                let kor = Number($("#kor").val());
+                let eng = Number($(".eng").val());
+                $("#d01").text(kor+eng);        // 글자 변경 text
+                $("#d01").css("color","red");   // 속성 변경 css
+                $("#d01").css("font-size","50px");   // 속성 변경 css
+                $("#d01").css("border","2px solid black");   // 속성 변경 css
+            });
+
+            $("#chgImg").click(function(){
+                $("#img").attr('src','images/best02.jpg');
+            });
+        });
+
+        
+
+    </script>
+</head>
+<body>
+    <label>국어</label>
+    <input type="text" id="kor"><br>
+    <label>영어</label>
+    <input type="text" class="eng"><br>
+    
+    <div id="d01">0</div>
+    <img id="img" src="images/best01.jpg"><br>
+    <button id="cbtn">계산하기</button>
+    <button id="chgImg">이미지 변경</button>
+
+    <!--
+        <script>
+            function cal(){
+                let kor = Number($("#kor").val());
+                let eng = Number($(".eng").val());
+                $("#d01").text(kor+eng);
+            }
+            document.querySelector("#cbtn").onclick = cal;
+        </script>
+    -->
+</body>
+</html>

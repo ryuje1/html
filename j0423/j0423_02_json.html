@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stu = [1, 2, 3];    // stu[0]
+        // json형태 > server(공공데이터 서울버스실시간버스시간표)
+        let stuData = [
+        {"no":1, "name":"홍길동", "kor":100, "eng":100, "math":100},
+        {"no":1, "name":"유관순", "kor":80, "eng":80, "math":80},
+        {"no":1, "name":"이순신", "kor":90, "eng":90, "math":90}
+        ]
+
+        document.write(stuData[0].no, "<br>");
+        document.write(stuData[1].name, "<br>");
+        document.write(stuData[2].math, "<br>");
+    </script>
+</body>
+</html>

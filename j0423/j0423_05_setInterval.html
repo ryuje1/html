@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border:1px solid black; margin:20px auto;
+            width:600px; height:200px;
+            font-size:40px; text-align:center; line-height:200px;}
+        button{width:150px; height:40px; text-align:center; display:block; margin:5px auto;}
+    </style>
+</head>
+<body>
+    <div id="txt"></div>
+    <button id="start">시간진행</button>
+    <button id="stop">시간멈춤</button>
+    <script>
+
+        getClock();     // 구동 시 바로 실행
+        // 시간진행 버튼을 클릭 시 시간이 진행되도록 구현
+        document.querySelector("#start").onclick = start;
+        document.querySelector("#stop").onclick = stop;
+
+        function start(){
+            // setInterval - 일정한 시간 간격으로 함수 호출
+            timer = setInterval(getClock,1000);     // 함수호출, 1초마다 간격을 두고 실행하라는 의미
+        }
+
+        function stop(){
+            clearInterval(timer);       // clearInterval 하려면 변수가 있어야 함
+        }
+
+        function getClock(){
+            // 날짜 객체 사용
+            let today = new Date();     // 날짜 객체선언
+
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var date = today.getDate();
+            var hours = today.getHours();
+            var min = today.getMinutes();
+            var sec = today.getSeconds();
+
+            let txt = `${year}-${month<10?"0"+month:month}-${date<10?"0"+date:date} ${hours<10?"0"+hours:hours}:${min<10?"0"+min:min}:${sec<10?"0"+sec:sec}`;
+            document.querySelector("#txt").innerText=txt;
+        }
+
+        // let day = today.getFullYear()+"-"+(today.getMonth()+1)+"-"+today.getDate()+" "+today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+        // document.querySelector("#txt").innerText=day;
+        
+    </script>
+</body>
+</html>
