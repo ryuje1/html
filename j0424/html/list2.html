@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/notice_list.css">
+  <script>
+    $(function(){
+      let no=0;
+      let data = ``;
+      for(no=1;no<=10;no++){
+        data += `<tr>`;
+        data += `<td><span class="table-notice">${no}</span></td>`;
+        data += `<td class="table-title">`;
+        data += `<a href="">이벤트</a>`;
+        data += `</td>`;
+        data += `<td>2025-04-24</td>`;
+        data += `<td>0</td>`;
+        data += `</tr>`;
+      }
+      $("#tbody").html(data);
+
+      $("#cbtn").click(function(){
+        data = ``;
+        data += `<tr>`;
+        data += `<td><span class="table-notice">${no}</span></td>`;
+        data += `<td class="table-title">`;
+        data += `<a href="">${$("#txt").val()}</a>`;
+        data += `</td>`;
+        data += `<td>2025-04-24</td>`;
+        data += `<td>0</td>`;
+        data += `</tr>`;
+        no++;
+        $("#tbody").append(data);
+        
+        $("#txt").val("");
+      }); // cbtn
+    }); // jquery
+  </script>
+</head>
+<body>
+<section>
+    <h1>NOTICE</h1>
+    <div class="wrapper">
+      <form action="/search" name="search" method="post">
+        
+
+        <div class="title">
+          <input type="text" id="txt">
+        </div>
+  
+        <button type="button" id="cbtn">게시글 저장</button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="18%">
+        <col width="50%">
+        <col width="18%">
+        <col width="10%">
+      </colgroup>
+      <!-- 제목부분 -->
+      <tr>
+        <th>No.</th>
+        <th>제목</th>
+        <th>작성일</th>
+        <th>조회수</th>
+      </tr>
+      <!-- 내용부분 -->
+      <tbody id="tbody">
+        
+      </tbody>
+      
+    </table>
+
+    <ul class="page-num">
+      <li class="first"></li>
+      <li class="prev"></li>
+      <li class="num"><div>1</div></li>
+      <li class="next"></li>
+      <li class="last"></li>
+    </ul>
+
+    <a href="write_view.jsp"><div class="write">쓰기</div></a>
+  </section>
+
+</body>
+</html>

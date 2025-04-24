@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        #container{width:1200px; margin:30px auto; text-align:center;}
+        h2{font-size:40px; margin-bottom:40px;}
+        input{margin-bottom:5px;}
+        input:focus{outline:none; border:2px solid red;}  /* 기본 focus 형태를 제거 */
+        #input{margin-bottom:30px;}
+        #input div{font-size:20px; margin-bottom:10px;}
+        #input input{width:500px; height:32px; padding-left:20px;}
+        table{width:1200px; margin:10px auto;}
+        table, th, td{border:1px solid black; border-collapse:collapse;}
+        th{height:60px; background:#eee;}
+        td{height:50px;}
+        button{width:100px; height:35px;}
+        input:focus{outline:none;}
+    </style>
+    <script>
+        $(function(){
+            let hdata = ``;
+            let no = 1;
+            // 저장, 수정저장인지 확인 변수
+            let suFlag = 0;     // 0:save 1:updateSave
+            let updateNum = 0;
+
+            // 5개 게시글 가져오기
+            for(let i=0;i<5;i++){
+                hdata += `<tr id="${i+1}">`;
+                hdata += `<td>${i+1}</td>`;
+                hdata += `<td class="title">이벤트 신청</td>`;
+                hdata += `<td>관리자</td>`;
+                hdata += `<td>2025-04-24</td>`;
+                hdata += `<td>1</td>`;
+                hdata += `<td>`;
+                hdata += `<button type="button" class="uBtn">수정</button>`;
+                hdata += `<button type="button" class="dBtn">삭제</button>`;
+                hdata += `</td>`;
+                hdata += `</tr>`;
+                no++;
+            }
+            $("#tbody").html(hdata);
+
+    
+            $(document).on("click", "#save", function(){
+                // console.log("제목 : ", $("#title").val());
+                // console.log("작성자 : ", $("#id").val());
+
+                if(suFlag == 0){    // 게시글 추가 저장
+                    // 게시글 추가
+                    hdata = ``;
+                    hdata += `<tr id="${no}">`;
+                    hdata += `<td>${no}</td>`;
+                    hdata += `<td class="title">${$("#title").val()}</td>`;
+                    hdata += `<td>${$("#id").val()}</td>`;
+                    hdata += `<td>2025-04-24</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td>`;
+                    hdata += `<button type="button" class="uBtn">수정</button>`;
+                    hdata += `<button type="button" class="dBtn">삭제</button>`;
+                    hdata += `</td>`;
+                    hdata += `</tr>`;
+                    no++;
+    
+                    // #tbody 게시글 1개 추가
+                    $("#tbody").append(hdata);
+                    alert("게시글을 저장합니다.");
+    
+                    // 입력창 초기화
+                    $("#title").val("");
+                    $("#id").val("");
+                }else{          // 게시글 수정 저장
+                    console.log("제목 : ", $("#title").val());
+                    console.log("작성자 : ", $("#id").val());
+                    console.log("updateNum : ", updateNum);
+
+                    // 게시글 추가
+                    hdata = ``;
+                    hdata += `<td>${updateNum}</td>`;
+                    hdata += `<td class="title">${$("#title").val()}</td>`;
+                    hdata += `<td>${$("#id").val()}</td>`;
+                    hdata += `<td>2025-04-24</td>`;
+                    hdata += `<td>1</td>`;
+                    hdata += `<td>`;
+                    hdata += `<button type="button" class="uBtn">수정</button>`;
+                    hdata += `<button type="button" class="dBtn">삭제</button>`;
+                    hdata += `</td>`;
+                    no++;
+    
+                    // #tbody 게시글 1개 추가
+                    $(`#${updateNum}`).html(hdata);
+                    alert("게시글을 수정합니다.");
+    
+                    // 입력창 초기화
+                    $("#title").val("");
+                    $("#id").val("");
+                    $("#save").text("저장");
+                    suFlag = 0;
+                }
+            }); // 저장 버튼
+
+            /*
+            // 정적 이벤트
+            $(".delBtn").click(function(){
+                alert("경고창");
+                console.log($(this).text());
+                if(confirm("정말 삭제하시겠습니까?")) ;
+            }); // 삭제 버튼
+            */
+
+            // 동적이벤트 - document 다시 읽어서 .delBtn을 찾아 실행
+            $(document).on("click", ".delBtn", function(){
+                alert("경고창");
+                console.log("부모 : ", $(this).closest("tr").attr("id"));
+                if(confirm("게시글을 삭제하시겠습니까?")){
+                    // 해당 게시글 삭제
+                    // $("#1").remove();
+                    $(`#${$(this).closest("tr").attr("id")}`).remove();
+                    // $(`#${$(this).closest("tr").attr("id")}`).remove();
+                }
+            }); // 삭제 버튼
+
+            // 수정버튼 클릭 시, 수정화면 이동 이벤트
+            $(document).on("click", ".uBtn", function(){
+                // 수정 저장 버튼을 클릭하면 다시 위치점으로 수정이 되어야함
+                updateNum = $(this).closest("tr").attr("id");
+                console.log($(this).closest("tr").children()[1].innerText);
+                console.log($(this).closest("tr").children()[2].innerText);
+                if(confirm(`${updateNum}번 게시글을 수정하시겠습니까?`)){
+                    $("#title").val($(this).closest("tr").children()[1].innerText);
+                    $("#id").val($(this).closest("tr").children()[2].innerText);
+                    $("#save").text("수정저장");
+                    // $("#input").append(`<button type="button" id="cancel">취소</button>`)
+                    suFlag = 1;
+                    console.log("suFlag : ", suFlag);
+                }
+            }); // uBtn
+            
+
+        }); //jquery
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요"><br>
+            <input type="text" name="title" id="id" placeholder="작성자를 입력하세요"><br>
+            <button type="button" id="save">저장</button>
+        </div>
+        <table>
+            <colgroup>
+                <col width="10%">
+                <col width="*">
+                <col width="12%">
+                <col width="12%">
+                <col width="12%">
+                <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
