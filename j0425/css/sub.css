@@ -1,0 +1,14 @@
+*{margin:0; padding:0;}
+#container{width:1200px; margin:30px auto; text-align:center;}
+h2{font-size:40px; margin-bottom:40px;}
+input{margin-bottom:5px;}
+input:focus{outline:none; border:2px solid red;}  /* 기본 focus 형태를 제거 */
+#input{margin-bottom:30px;}
+#input div{font-size:20px; margin-bottom:10px;}
+#input input{width:500px; height:32px; padding-left:20px;}
+table{width:1200px; margin:10px auto;}
+table, th, td{border:1px solid black; border-collapse:collapse;}
+th{height:60px; background:#eee;}
+td{height:50px;}
+button{width:100px; height:35px;}
+input:focus{outline:none;}

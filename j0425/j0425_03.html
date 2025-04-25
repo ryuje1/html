@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main2.js"></script>
+    <script>
+       
+       
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요"><br>
+            <input type="text" name="id" id="id" placeholder="작성자를 입력하세요"><br>
+            <button type="button" id="save">저장</button>
+            <button type="button" id="dataOpen3">데이터 가져오기</button>
+        </div>
+
+        <table>
+            <colgroup>
+              <col width="10%">
+              <col width="10%">
+              <col width="10%">
+              <col width="10%">
+              <col width="10%">
+              <col width="10%">
+              <col width="10%">
+              <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>촬영일</th>
+                <th>작가</th>
+                <th>사진위치</th>
+                <th>키워드</th>
+                <th>제목</th>
+                <th>사진링크</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <tr id="">
+                    <td>1</td>
+                    <td>길동</td>
+                    <td>홍</td>
+                    <td>aaa@naver.com</td>
+                    <td>서울</td>
+                    <td>90566</td>
+                    <td>02-222-2222</td>
+                    <td>
+                        <button type="button" class="updateBtn">수정</button>
+                        <button type="button" class="deleteBtn">삭제</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="txt">
+            
+        </div>
+
+    </div>
+
+
+    
+</body>
+</html>

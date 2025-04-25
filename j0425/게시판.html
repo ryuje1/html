@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        #container{width:1200px; margin:30px auto; text-align:center;}
+        h2{font-size:40px; margin-bottom:40px;}
+        input{margin-bottom:5px;}
+        input:focus{outline:none; border:2px solid red;}  /* 기본 focus 형태를 제거 */
+        #input{margin-bottom:30px;}
+        #input div{font-size:20px; margin-bottom:10px;}
+        #input input{width:500px; height:32px; padding-left:20px;}
+        table{width:1200px; margin:10px auto;}
+        table, th, td{border:1px solid black; border-collapse:collapse;}
+        th{height:60px; background:#eee;}
+        td{height:50px;}
+        button{width:100px; height:35px;}
+        input:focus{outline:none;}
+    </style>
+    <script>
+        // 게시판 등록, 삭제, 수정을 구현하시오.
+        let hdata = ``;
+        let no = 1;
+        let boardNo = 0;
+        let title, id, bdate, bhit;
+        let flag = 0;   // 0이면 추가 1이면 수정
+
+        $(function(){
+            boardList(); // 게시글 5개 불러오는 함수 호출
+
+            $(document).on("click", "#save", function(){
+                // 저장 버튼 클릭
+                alert("저장");
+                title = $("#title").val();
+                id = $("#id").val();
+
+                if(flag == 0) boardOne();
+                else {
+                    boardUpdate();
+                    $("#save").text("게시글 저장");
+                    flag = 0;
+                }
+                
+            }); // #save
+
+            $(document).on("click", ".uBtn", function(){
+                alert("수정");
+                boardNo = $(this).closest("tr").attr("id");
+                if(confirm(`${boardNo}번 게시글을 수정하시겠습니까?`)){
+                    //수정
+                    flag = 1;
+                    // console.log($(this).closest("tr").children());
+                    let trtd = $(this).closest("tr").children();
+                    title = trtd[1].innerText;
+                    id = trtd[2].innerText;
+                    bdate = trtd[3].innerText;
+                    bhit = trtd[4].innerText;
+                    // console.log(boardNo, title, id, bdate, bhit);
+                    $("#title").val(title);
+                    $("#id").val(id);
+
+                    $("#save").text("수정저장");
+                }
+            }); // .uBtn
+
+            $(document).on("click", ".dBtn", function(){
+                boardNo = $(this).closest("tr").attr("id");
+                if(confirm(`${boardNo}번 게시글을 삭제하시겠습니까?`)){
+                    $(`#${boardNo}`).remove();
+                    alert("삭제 완료되었습니다.");
+                }
+            }); // .dBtn
+
+        }); //jquery
+
+        function boardList(){
+            // 게시글 5개 불러오기
+            // hdata = ``;
+            for(let i=0; i<5; i++){
+                hdata += `<tr id=${i+1}>`;
+                hdata += `<td>${i+1}</td>`;
+                hdata += `<td>이벤트</td>`;
+                hdata += `<td>관리자</td>`;
+                hdata += `<td>2025-04-24</td>`;
+                hdata += `<td>0</td>`;
+                hdata += `<td>`;
+                hdata += `<button type="button" class="uBtn">수정</button>`;
+                hdata += `<button type="button" class="dBtn">삭제</button>`;
+                hdata += `</td>`;
+                hdata += `</tr>`;
+                no++;
+            }
+            $("#tbody").append(hdata);
+        }; // boardList
+
+        function boardOne() {
+            hdata = ``;
+            hdata += `<tr id=${no}>`;
+            hdata += `<td>${no}</td>`;
+            hdata += `<td>${title}</td>`;
+            hdata += `<td>${id}</td>`;
+            hdata += `<td>2025-04-24</td>`;
+            hdata += `<td>0</td>`;
+            hdata += `<td>`;
+            hdata += `<button type="button" class="uBtn">수정</button>`;
+            hdata += `<button type="button" class="dBtn">삭제</button>`;
+            hdata += `</td>`;
+            hdata += `</td>`;
+            no++;
+
+            $("#tbody").append(hdata);
+
+            // input 값 지우기
+            $("#title").val("");
+            $("#id").val("");
+            alert("게시글 추가 완료");
+        }
+
+        function boardUpdate(){
+            hdata = ``;
+            hdata += `<td>${boardNo}</td>`;
+            hdata += `<td>${title}</td>`;
+            hdata += `<td>${id}</td>`;
+            hdata += `<td>${bdate}</td>`;
+            hdata += `<td>${bhit}</td>`;
+            hdata += `<td>`;
+            hdata += `<button type="button" class="uBtn">수정</button>`;
+            hdata += `<button type="button" class="dBtn">삭제</button>`;
+            hdata += `</td>`;
+
+            $(`#${boardNo}`).html(hdata);
+
+            $("#title").val("");
+            $("#id").val("");
+            alert("수정 완료");
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>게시판</h2>
+        <div id="input">
+            <div>글을 입력하세요.</div>
+            <input type="text" name="title" id="title" placeholder="제목을 입력하세요"><br>
+            <input type="text" name="title" id="id" placeholder="작성자를 입력하세요"><br>
+            <button type="button" id="save">저장</button>
+        </div>
+        <table>
+            <colgroup>
+                <col width="10%">
+                <col width="*">
+                <col width="12%">
+                <col width="12%">
+                <col width="12%">
+                <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+                <!--
+                    <tr>
+                        <td>1</td>
+                        <td>이벤트</td>
+                        <td>관리자</td>
+                        <td>2025-04-24</td>
+                        <td>0</td>
+                        <td>
+                            <button type="button" class="uBtn">수정</button>
+                            <button type="button" class="dBtn">삭제</button>
+                        </td>
+                    </tr>
+                -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
