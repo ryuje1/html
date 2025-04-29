@@ -400,8 +400,9 @@ alter table stuscore3 add rank number(3);
 
 select * from stuscore3;
 
-
--- rank() 함수 : 어떤 형태로 등수를 출력 -> rank() over(정렬형태)
+-- sno 1, 2, 3, ...
+select * from stuscore3;
+-- rank() 함수 : 어떤 형태로 등수를 출력 -> rank() over(정렬형태). 자동으로 over() 기준으로 컬럼 생성
 -- sno 96, 23, 3, 22, ....
 select sno, name, total, rank() over(order by total desc) from stuscore3;   -- 합계 높은 순서대로 등수 매김
 

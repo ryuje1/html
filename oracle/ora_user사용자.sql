@@ -4,7 +4,7 @@ id varchar2(100) primary key,
 pw varchar2(100),
 name varchar2(100),
 phone varchar2(20)
-);
+); 
 
 -- 입력명령어 insert : 임시저장
 insert into member (id,pw,name,phone) values(

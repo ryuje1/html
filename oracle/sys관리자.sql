@@ -8,4 +8,4 @@ grant connect, resource, dba to ora_user;   -- 접속권한, 자원할당, db명
 
 create user ora_user2 identified by 1111;
 
-grant connect, resource, dba to ora_user2;
+grant connect, resource, dba to ora_user2; 
